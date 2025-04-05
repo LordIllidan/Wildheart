@@ -1,0 +1,94 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+// Glassmorphism utility classes
+.glass {
+    @include glass;
+}
+
+.glass-sm {
+    @include glass;
+    border-radius: $border-radius-sm;
+}
+
+.glass-md {
+    @include glass;
+    border-radius: $border-radius-md;
+}
+
+.glass-lg {
+    @include glass;
+    border-radius: $border-radius-lg;
+}
+
+.glass-xl {
+    @include glass;
+    border-radius: $border-radius-xl;
+}
+
+.glass-2xl {
+    @include glass;
+    border-radius: $border-radius-2xl;
+}
+
+.glass-full {
+    @include glass;
+    border-radius: $border-radius-full;
+}
+
+// Dark glass variants
+.glass-dark {
+    background: $color-bg-dark;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+.glass-dark-sm {
+    @extend .glass-dark;
+    border-radius: $border-radius-sm;
+}
+
+.glass-dark-md {
+    @extend .glass-dark;
+    border-radius: $border-radius-md;
+}
+
+.glass-dark-lg {
+    @extend .glass-dark;
+    border-radius: $border-radius-lg;
+}
+
+.glass-dark-xl {
+    @extend .glass-dark;
+    border-radius: $border-radius-xl;
+}
+
+.glass-dark-2xl {
+    @extend .glass-dark;
+    border-radius: $border-radius-2xl;
+}
+
+.glass-dark-full {
+    @extend .glass-dark;
+    border-radius: $border-radius-full;
+}
+
+// Hover effects
+.glass-hover {
+    transition: all $transition-fast;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.15);
+    }
+}
+
+.glass-dark-hover {
+    transition: all $transition-fast;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.3);
+    }
+}

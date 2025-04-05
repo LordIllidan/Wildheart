@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wildheart-api
+  namespace: wildheart
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: wildheart-api
+  template:
+    metadata:
+      labels:
+        app: wildheart-api
+    spec:
+      containers:
+      - name: wildheart-api
+        image: wildheart-api:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: "Production"
+        - name: ConnectionStrings__DefaultConnection
+          valueFrom:
+            secretKeyRef:
+              name: wildheart-secrets
+              key: database-connection
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "200m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: wildheart-api
+  namespace: wildheart
+spec:
+  selector:
+    app: wildheart-api
+  ports:
+  - port: 80
+    targetPort: 80
+  type: ClusterIP
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: wildheart-api
+  namespace: wildheart
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: api.wildheart.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: wildheart-api
+            port:
+              number: 80 

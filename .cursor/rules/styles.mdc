@@ -1,0 +1,233 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+ ---
+description: Style guidelines and rules for the Wildheart project.
+globs: **/*.scss
+---
+
+# Wildheart Style System
+
+## Color System
+
+### Primary Colors
+- Primary: `$color-primary` (#5A67D8)
+- Primary Light: `$color-primary-light` (lighten 10%)
+- Primary Dark: `$color-primary-dark` (darken 10%)
+
+### Accent Colors
+- Accent: `$color-accent` (#F6AD55)
+- Accent Light: `$color-accent-light` (lighten 10%)
+- Accent Dark: `$color-accent-dark` (darken 10%)
+
+### Semantic Colors
+- Success: `$color-success` (#48BB78)
+- Warning: `$color-warning` (#ECC94B)
+- Error: `$color-error` (#F56565)
+- Info: `$color-info` (#4299E1)
+
+### Neutral Colors
+- White: `$color-white` (#FFFFFF)
+- Black: `$color-black` (#000000)
+- Gray Scale: 50-900 (from lightest to darkest)
+
+### Glassmorphism Colors
+- Background: `$color-bg` (rgba(255, 255, 255, 0.8))
+- Background Dark: `$color-bg-dark` (rgba(30, 30, 30, 0.8))
+- Surface: `$color-surface` (rgba(255, 255, 255, 0.3))
+- Border: `$color-border` (rgba(0, 0, 0, 0.1))
+- Shadow: `$color-shadow` (rgba(0, 0, 0, 0.05))
+
+## Typography
+
+### Font Families
+- Base: `$font-family-base` ('Inter', 'Roboto', sans-serif)
+- Heading: `$font-family-heading` ('Inter', 'Roboto', sans-serif)
+
+### Font Sizes
+- Base: `$font-size-base` (16px)
+- Small: `$font-size-sm` (14px)
+- Large: `$font-size-lg` (18px)
+- Extra Large: `$font-size-xl` (20px)
+- 2XL: `$font-size-2xl` (24px)
+- 3XL: `$font-size-3xl` (30px)
+- 4XL: `$font-size-4xl` (36px)
+- 5XL: `$font-size-5xl` (48px)
+
+### Line Heights
+- Base: `$line-height-base` (1.6)
+- Heading: `$line-height-heading` (1.2)
+
+## Spacing
+
+### Spacing Scale
+- Extra Small: `$spacing-xs` (0.25rem / 4px)
+- Small: `$spacing-sm` (0.5rem / 8px)
+- Medium: `$spacing-md` (1rem / 16px)
+- Large: `$spacing-lg` (1.5rem / 24px)
+- Extra Large: `$spacing-xl` (2rem / 32px)
+- 2XL: `$spacing-2xl` (3rem / 48px)
+- 3XL: `$spacing-3xl` (4rem / 64px)
+
+## Border Radius
+
+### Border Radius Scale
+- Small: `$border-radius-sm` (4px)
+- Medium: `$border-radius-md` (8px)
+- Large: `$border-radius-lg` (12px)
+- Extra Large: `$border-radius-xl` (16px)
+- 2XL: `$border-radius-2xl` (24px)
+- Full: `$border-radius-full` (9999px)
+
+## Shadows
+
+### Shadow Scale
+- Small: `$shadow-sm` (0 1px 2px 0 rgba(0, 0, 0, 0.05))
+- Medium: `$shadow-md` (0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06))
+- Large: `$shadow-lg` (0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05))
+- Extra Large: `$shadow-xl` (0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04))
+- 2XL: `$shadow-2xl` (0 25px 50px -12px rgba(0, 0, 0, 0.25))
+
+## Transitions
+
+### Transition Speeds
+- Fast: `$transition-fast` (0.15s ease)
+- Base: `$transition-base` (0.3s ease)
+- Slow: `$transition-slow` (0.5s ease)
+
+## Z-index
+
+### Z-index Scale
+- Dropdown: `$z-index-dropdown` (1000)
+- Sticky: `$z-index-sticky` (1020)
+- Fixed: `$z-index-fixed` (1030)
+- Modal Backdrop: `$z-index-modal-backdrop` (1040)
+- Modal: `$z-index-modal` (1050)
+- Popover: `$z-index-popover` (1060)
+- Tooltip: `$z-index-tooltip` (1070)
+
+## Breakpoints
+
+### Breakpoint Scale
+- Extra Small: `$breakpoint-xs` (0)
+- Small: `$breakpoint-sm` (576px)
+- Medium: `$breakpoint-md` (768px)
+- Large: `$breakpoint-lg` (992px)
+- Extra Large: `$breakpoint-xl` (1200px)
+- 2XL: `$breakpoint-2xl` (1400px)
+
+## Component Guidelines
+
+### Buttons
+- Use `.btn` class for all buttons
+- Variants: primary, secondary, success, danger, warning, info
+- Outline variants available with `.btn-outline-*` classes
+- Sizes: default, small (`.btn-sm`), large (`.btn-lg`)
+- Block buttons with `.btn-block`
+- Icon buttons with `.btn-icon`
+- Loading state with `.btn-loading`
+
+### Forms
+- Form groups with `.form-group`
+- Form controls with `.form-control`
+- Validation states: `.is-valid`, `.is-invalid`
+- Checkboxes and radio buttons with `.form-check`
+- Input groups with `.input-group`
+- Floating labels with `.form-floating`
+
+### Cards
+- Base card with `.card`
+- Card header with `.card-header`
+- Card body with `.card-body`
+- Card footer with `.card-footer`
+- Card variants: primary, secondary, success, danger, warning, info
+- Special effects: hover, glass, gradient, accent
+
+## Utility Classes
+
+### Spacing Utilities
+- Margin: `.m-*`, `.mt-*`, `.mr-*`, `.mb-*`, `.ml-*`, `.mx-*`, `.my-*`
+- Padding: `.p-*`, `.pt-*`, `.pr-*`, `.pb-*`, `.pl-*`, `.px-*`, `.py-*`
+- Gap: `.gap-*`, `.gap-x-*`, `.gap-y-*`
+- Space between: `.space-x-*`, `.space-y-*`
+
+### Color Utilities
+- Text colors: `.text-*`
+- Background colors: `.bg-*`
+- Border colors: `.border-*`
+- Fill colors: `.fill-*`
+- Stroke colors: `.stroke-*`
+- Opacity: `.opacity-*`
+- Gradients: `.gradient-*`
+
+### Typography Utilities
+- Font families: `.font-sans`, `.font-serif`, `.font-mono`
+- Font sizes: `.text-*`
+- Font weights: `.font-weight-*`
+- Line heights: `.line-height-*`
+- Letter spacing: `.tracking-*`
+- Text alignment: `.text-left`, `.text-center`, `.text-right`, `.text-justify`
+- Text transform: `.text-uppercase`, `.text-lowercase`, `.text-capitalize`
+- Text decoration: `.text-underline`, `.text-line-through`, `.text-no-decoration`
+- Text overflow: `.text-truncate`, `.text-break`, `.text-nowrap`
+
+### Layout Utilities
+- Display: `.d-none`, `.d-inline`, `.d-inline-block`, `.d-block`, `.d-flex`, `.d-grid`
+- Flex: `.flex-row`, `.flex-column`, `.flex-wrap`, `.flex-nowrap`, `.flex-grow-1`, `.flex-shrink-1`
+- Justify content: `.justify-content-start`, `.justify-content-end`, `.justify-content-center`, `.justify-content-between`, `.justify-content-around`, `.justify-content-evenly`
+- Align items: `.align-items-start`, `.align-items-end`, `.align-items-center`, `.align-items-baseline`, `.align-items-stretch`
+- Position: `.position-relative`, `.position-absolute`, `.position-fixed`, `.position-sticky`, `.position-static`
+- Width/Height: `.w-100`, `.w-auto`, `.h-100`, `.h-auto`
+- Border: `.border`, `.border-0`, `.border-top`, `.border-right`, `.border-bottom`, `.border-left`
+- Border radius: `.rounded`, `.rounded-sm`, `.rounded-lg`, `.rounded-circle`, `.rounded-0`
+- Shadow: `.shadow-sm`, `.shadow`, `.shadow-lg`, `.shadow-none`
+
+### Animation Utilities
+- Duration: `.duration-fast`, `.duration-normal`, `.duration-slow`
+- Timing: `.timing-linear`, `.timing-ease`, `.timing-ease-in`, `.timing-ease-out`, `.timing-ease-in-out`
+- Delay: `.delay-0`, `.delay-100`, `.delay-200`, `.delay-300`, `.delay-400`, `.delay-500`
+- Animations: `.fade-in`, `.fade-out`, `.slide-in-right`, `.slide-in-left`, `.slide-in-up`, `.slide-in-down`, `.scale-in`, `.scale-out`, `.rotate-in`, `.rotate-out`, `.bounce`, `.pulse`, `.shake`
+- Hover effects: `.hover-scale`, `.hover-lift`, `.hover-rotate`
+- Loading: `.loading-spinner`, `.progress-bar`, `.skeleton`
+
+### Accessibility Utilities
+- Screen reader: `.sr-only`, `.sr-only-focusable`
+- Skip link: `.skip-link`, `.skip-to-main`
+- Focus: `.focus-ring`
+- High contrast: `.high-contrast`, `.high-contrast-text`
+- Reduced motion: `.reduced-motion`
+- ARIA attributes: `[aria-hidden]`, `[aria-expanded]`, `[aria-disabled]`, `[aria-required]`, `[aria-invalid]`, `[aria-busy]`, `[aria-live]`
+- Touch targets: `.touch-target`
+- Readability: `.readable`, `.text-size-adjust`
+- Print: `.no-print`, `.print-only`
+
+## Theme System
+
+### Light Theme
+- Default theme with light backgrounds and dark text
+- Glass effect with light transparency
+- Subtle shadows and borders
+
+### Dark Theme
+- Activated with `[data-theme="dark"]` attribute
+- Dark backgrounds with light text
+- Adjusted shadows and borders for dark mode
+- Glass effect with dark transparency
+
+## Best Practices
+
+1. **Use Variables**: Always use SCSS variables instead of hardcoded values
+2. **Responsive Design**: Use the `respond-to` mixin for responsive styles
+3. **Component-Based**: Organize styles by component
+4. **Utility-First**: Prefer utility classes for simple styling needs
+5. **Accessibility**: Ensure all components meet WCAG guidelines
+6. **Performance**: Minimize CSS by using shared styles and avoiding duplication
+7. **Maintainability**: Use BEM naming convention for custom components
+8. **Theming**: Use CSS variables for theme-specific values
+9. **Print Styles**: Include print-specific styles for better document printing
+10. **Reduced Motion**: Respect user preferences for reduced motion
+
+
+

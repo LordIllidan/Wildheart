@@ -1,0 +1,209 @@
+.system-detail {
+    padding: 24px;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+    }
+
+    &__title-container {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    &__title {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    &__status {
+        min-width: 100px;
+        justify-content: center;
+    }
+
+    &__actions {
+        display: flex;
+        gap: 8px;
+    }
+
+    &__card {
+        margin-bottom: 24px;
+    }
+
+    &__tab-content {
+        padding: 24px 0;
+    }
+
+    &__info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 24px;
+        margin-bottom: 24px;
+    }
+
+    &__info-item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__info-label {
+        font-size: 14px;
+        color: var(--text-muted);
+        margin: 0 0 4px 0;
+    }
+
+    &__info-value {
+        font-size: 16px;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &__description {
+        margin-top: 24px;
+    }
+
+    &__description-title {
+        font-size: 18px;
+        margin: 0 0 8px 0;
+    }
+
+    &__description-text {
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 0;
+        white-space: pre-line;
+    }
+
+    &__relationships-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+    }
+
+    &__relationships-title {
+        font-size: 20px;
+        margin: 0;
+    }
+
+    &__relationships-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        gap: 16px;
+    }
+
+    &__relationship-card {
+        margin-bottom: 16px;
+    }
+
+    &__relationship-info {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    &__relationship-type {
+        margin-bottom: 8px;
+    }
+
+    &__relationship-systems {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__relationship-system {
+        display: flex;
+        gap: 8px;
+    }
+
+    &__relationship-label {
+        font-weight: 500;
+        min-width: 80px;
+    }
+
+    &__relationship-value {
+        font-weight: 500;
+        color: var(--primary-color);
+    }
+
+    &__relationship-description {
+        margin-top: 8px;
+        font-size: 14px;
+        color: var(--text-muted);
+    }
+
+    &__relationship-actions {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 16px;
+    }
+
+    &__no-relationships {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 48px 0;
+        text-align: center;
+    }
+
+    &__no-relationships-icon {
+        font-size: 48px;
+        width: 48px;
+        height: 48px;
+        margin-bottom: 16px;
+        color: var(--text-muted);
+    }
+
+    &__no-relationships-text {
+        font-size: 16px;
+        color: var(--text-muted);
+        margin: 0 0 24px 0;
+    }
+
+    &__loading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 48px 0;
+        text-align: center;
+    }
+
+    &__error {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 48px 0;
+        text-align: center;
+    }
+
+    &__error-icon {
+        font-size: 48px;
+        width: 48px;
+        height: 48px;
+        margin-bottom: 16px;
+        color: var(--color-error);
+    }
+
+    &__error-text {
+        font-size: 16px;
+        margin: 0 0 24px 0;
+    }
+
+    .text-primary {
+        color: var(--primary-color);
+    }
+
+    .text-muted {
+        color: var(--text-muted);
+    }
+}

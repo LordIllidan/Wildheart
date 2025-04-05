@@ -1,0 +1,197 @@
+// Glassmorphism effect
+@mixin glass {
+    background: $color-surface;
+    backdrop-filter: blur(12px);
+    border: 1px solid $color-border;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+}
+
+@mixin glass-dark {
+    background: $color-surface-dark;
+    backdrop-filter: blur(12px);
+    border: 1px solid $color-border-dark;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+}
+
+// Responsive breakpoints
+@mixin respond-to($breakpoint) {
+    @if $breakpoint ==xs {
+        @media (min-width: $breakpoint-xs) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==sm {
+        @media (min-width: $breakpoint-sm) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==md {
+        @media (min-width: $breakpoint-md) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==lg {
+        @media (min-width: $breakpoint-lg) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==xl {
+        @media (min-width: $breakpoint-xl) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==2xl {
+        @media (min-width: $breakpoint-2xl) {
+            @content;
+        }
+    }
+}
+
+// Flexbox helpers
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+}
+
+// Grid helpers
+@mixin grid($columns: 1, $gap: $spacing-md) {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    gap: $gap;
+}
+
+// Typography
+@mixin heading-1 {
+    font-family: $font-family-heading;
+    font-size: $font-size-5xl;
+    font-weight: 700;
+    line-height: $line-height-heading;
+}
+
+@mixin heading-2 {
+    font-family: $font-family-heading;
+    font-size: $font-size-4xl;
+    font-weight: 700;
+    line-height: $line-height-heading;
+}
+
+@mixin heading-3 {
+    font-family: $font-family-heading;
+    font-size: $font-size-3xl;
+    font-weight: 600;
+    line-height: $line-height-heading;
+}
+
+@mixin heading-4 {
+    font-family: $font-family-heading;
+    font-size: $font-size-2xl;
+    font-weight: 600;
+    line-height: $line-height-heading;
+}
+
+@mixin heading-5 {
+    font-family: $font-family-heading;
+    font-size: $font-size-xl;
+    font-weight: 600;
+    line-height: $line-height-heading;
+}
+
+@mixin heading-6 {
+    font-family: $font-family-heading;
+    font-size: $font-size-lg;
+    font-weight: 600;
+    line-height: $line-height-heading;
+}
+
+// Button styles
+@mixin button-base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-sm $spacing-lg;
+    border-radius: $border-radius-lg;
+    font-weight: 500;
+    transition: all $transition-base;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+// Card styles
+@mixin card-base {
+    background: $color-surface;
+    backdrop-filter: blur(10px);
+    border-radius: $border-radius-xl;
+    padding: $spacing-lg;
+    box-shadow: $shadow-lg;
+    border: 1px solid $color-border;
+    transition: transform $transition-base;
+}
+
+// Form field styles
+@mixin form-field-base {
+    width: 100%;
+    padding: $spacing-sm $spacing-md;
+    border-radius: $border-radius-md;
+    border: 1px solid $color-gray-300;
+    background-color: $color-white;
+    transition: border-color $transition-fast, box-shadow $transition-fast;
+
+    &:focus {
+        border-color: $color-primary;
+        box-shadow: 0 0 0 3px rgba($color-primary, 0.1);
+        outline: none;
+    }
+}
+
+// Truncate text
+@mixin truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// Hide scrollbar but keep functionality
+@mixin hide-scrollbar {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+// Gradient backgrounds
+@mixin gradient-primary {
+    background: linear-gradient(135deg, $color-primary 0%, $color-primary-dark 100%);
+}
+
+@mixin gradient-accent {
+    background: linear-gradient(135deg, $color-accent 0%, $color-accent-dark 100%);
+}
+
+// Animations
+@mixin fade-in {
+    animation: fadeIn $transition-base ease-in-out;
+}
+
+@mixin slide-up {
+    animation: slideUp $transition-base ease-in-out;
+}
+
+@mixin slide-down {
+    animation: slideDown $transition-base ease-in-out;
+}
+
+@mixin scale-in {
+    animation: scaleIn $transition-base ease-in-out;
+}

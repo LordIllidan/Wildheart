@@ -1,0 +1,260 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+// Font families
+.font-sans {
+    font-family: $font-family-sans-serif !important;
+}
+
+.font-serif {
+    font-family: $font-family-serif !important;
+}
+
+.font-mono {
+    font-family: $font-family-monospace !important;
+}
+
+// Font sizes
+@each $size, $value in $font-sizes {
+    .text-#{$size} {
+        font-size: $value !important;
+    }
+}
+
+// Font weights
+@each $weight in (100, 200, 300, 400, 500, 600, 700, 800, 900) {
+    .font-weight-#{$weight} {
+        font-weight: $weight !important;
+    }
+}
+
+// Line heights
+@each $height in (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) {
+    .line-height-#{$height} {
+        line-height: $height !important;
+    }
+}
+
+// Letter spacing
+@each $spacing in (tighter, tight, normal, wide, wider, widest) {
+    .tracking-#{$spacing} {
+        letter-spacing: map-get($letter-spacing, $spacing) !important;
+    }
+}
+
+// Text alignment
+.text-left {
+    text-align: left !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.text-justify {
+    text-align: justify !important;
+}
+
+// Text transform
+.text-uppercase {
+    text-transform: uppercase !important;
+}
+
+.text-lowercase {
+    text-transform: lowercase !important;
+}
+
+.text-capitalize {
+    text-transform: capitalize !important;
+}
+
+.text-normal-case {
+    text-transform: none !important;
+}
+
+// Text decoration
+.text-underline {
+    text-decoration: underline !important;
+}
+
+.text-line-through {
+    text-decoration: line-through !important;
+}
+
+.text-no-decoration {
+    text-decoration: none !important;
+}
+
+// Text overflow
+.text-truncate {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+}
+
+.text-break {
+    word-break: break-word !important;
+}
+
+.text-nowrap {
+    white-space: nowrap !important;
+}
+
+// Text wrapping
+.text-wrap {
+    white-space: normal !important;
+}
+
+.text-nowrap {
+    white-space: nowrap !important;
+}
+
+.text-pre-wrap {
+    white-space: pre-wrap !important;
+}
+
+.text-pre-line {
+    white-space: pre-line !important;
+}
+
+.text-pre {
+    white-space: pre !important;
+}
+
+// Vertical alignment
+.align-baseline {
+    vertical-align: baseline !important;
+}
+
+.align-top {
+    vertical-align: top !important;
+}
+
+.align-middle {
+    vertical-align: middle !important;
+}
+
+.align-bottom {
+    vertical-align: bottom !important;
+}
+
+.align-text-top {
+    vertical-align: text-top !important;
+}
+
+.align-text-bottom {
+    vertical-align: text-bottom !important;
+}
+
+// Text selection
+::selection {
+    background-color: $color-primary;
+    color: $color-white;
+}
+
+// Responsive typography
+@each $breakpoint, $value in $breakpoints {
+    @include respond-to($breakpoint) {
+
+        // Font sizes
+        @each $size, $value in $font-sizes {
+            .text-#{$breakpoint}-#{$size} {
+                font-size: $value !important;
+            }
+        }
+
+        // Text alignment
+        .text-#{$breakpoint}-left {
+            text-align: left !important;
+        }
+
+        .text-#{$breakpoint}-center {
+            text-align: center !important;
+        }
+
+        .text-#{$breakpoint}-right {
+            text-align: right !important;
+        }
+
+        .text-#{$breakpoint}-justify {
+            text-align: justify !important;
+        }
+    }
+}
+
+// Typography mixins
+@mixin heading-1 {
+    font-family: $font-family-heading;
+    font-size: $font-size-xxl;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-tight;
+    margin-bottom: $spacing-4;
+}
+
+@mixin heading-2 {
+    font-family: $font-family-heading;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-tight;
+    margin-bottom: $spacing-3;
+}
+
+@mixin heading-3 {
+    font-family: $font-family-heading;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-tight;
+    margin-bottom: $spacing-3;
+}
+
+@mixin heading-4 {
+    font-family: $font-family-heading;
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-normal;
+    margin-bottom: $spacing-2;
+}
+
+@mixin heading-5 {
+    font-family: $font-family-heading;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-normal;
+    margin-bottom: $spacing-2;
+}
+
+@mixin heading-6 {
+    font-family: $font-family-heading;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-normal;
+    margin-bottom: $spacing-2;
+}
+
+@mixin body-text {
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    font-weight: $font-weight-normal;
+    line-height: $line-height-relaxed;
+    margin-bottom: $spacing-4;
+}
+
+@mixin small-text {
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-normal;
+    line-height: $line-height-normal;
+    margin-bottom: $spacing-2;
+}
+
+@mixin caption-text {
+    font-family: $font-family-base;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-normal;
+    line-height: $line-height-normal;
+    margin-bottom: $spacing-1;
+}

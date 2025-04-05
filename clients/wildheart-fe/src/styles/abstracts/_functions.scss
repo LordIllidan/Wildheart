@@ -1,0 +1,188 @@
+@import 'variables';
+
+// Convert pixel to rem
+@function rem($pixels) {
+    @return ($pixels / 16)+rem;
+}
+
+// Get color with opacity
+@function rgba-color($color, $opacity) {
+    @return rgba($color, $opacity);
+}
+
+// Get z-index value
+@function z($name) {
+    @if $name =="dropdown" {
+        @return $z-index-dropdown;
+    }
+
+    @else if $name =="sticky" {
+        @return $z-index-sticky;
+    }
+
+    @else if $name =="fixed" {
+        @return $z-index-fixed;
+    }
+
+    @else if $name =="modal-backdrop" {
+        @return $z-index-modal-backdrop;
+    }
+
+    @else if $name =="modal" {
+        @return $z-index-modal;
+    }
+
+    @else if $name =="popover" {
+        @return $z-index-popover;
+    }
+
+    @else if $name =="tooltip" {
+        @return $z-index-tooltip;
+    }
+}
+
+// Get spacing value
+@function spacing($size) {
+    @if $size =="xs" {
+        @return $spacing-xs;
+    }
+
+    @else if $size =="sm" {
+        @return $spacing-sm;
+    }
+
+    @else if $size =="md" {
+        @return $spacing-md;
+    }
+
+    @else if $size =="lg" {
+        @return $spacing-lg;
+    }
+
+    @else if $size =="xl" {
+        @return $spacing-xl;
+    }
+
+    @else if $size =="2xl" {
+        @return $spacing-2xl;
+    }
+
+    @else if $size =="3xl" {
+        @return $spacing-3xl;
+    }
+}
+
+// Get border radius value
+@function radius($size) {
+    @if $size =="sm" {
+        @return $border-radius-sm;
+    }
+
+    @else if $size =="md" {
+        @return $border-radius-md;
+    }
+
+    @else if $size =="lg" {
+        @return $border-radius-lg;
+    }
+
+    @else if $size =="xl" {
+        @return $border-radius-xl;
+    }
+
+    @else if $size =="2xl" {
+        @return $border-radius-2xl;
+    }
+
+    @else if $size =="full" {
+        @return $border-radius-full;
+    }
+}
+
+// Get shadow value
+@function shadow($size) {
+    @if $size =="sm" {
+        @return $shadow-sm;
+    }
+
+    @else if $size =="md" {
+        @return $shadow-md;
+    }
+
+    @else if $size =="lg" {
+        @return $shadow-lg;
+    }
+
+    @else if $size =="xl" {
+        @return $shadow-xl;
+    }
+
+    @else if $size =="2xl" {
+        @return $shadow-2xl;
+    }
+}
+
+// Get transition value
+@function transition($speed) {
+    @if $speed =="fast" {
+        @return $transition-fast;
+    }
+
+    @else if $speed =="base" {
+        @return $transition-base;
+    }
+
+    @else if $speed =="slow" {
+        @return $transition-slow;
+    }
+}
+
+// Get font size value
+@function font-size($size) {
+    @if $size =="sm" {
+        @return $font-size-sm;
+    }
+
+    @else if $size =="base" {
+        @return $font-size-base;
+    }
+
+    @else if $size =="lg" {
+        @return $font-size-lg;
+    }
+
+    @else if $size =="xl" {
+        @return $font-size-xl;
+    }
+
+    @else if $size =="2xl" {
+        @return $font-size-2xl;
+    }
+
+    @else if $size =="3xl" {
+        @return $font-size-3xl;
+    }
+
+    @else if $size =="4xl" {
+        @return $font-size-4xl;
+    }
+
+    @else if $size =="5xl" {
+        @return $font-size-5xl;
+    }
+}
+
+// Calculate line height based on font size
+@function line-height($font-size, $line-height-ratio: $line-height-base) {
+    @return $font-size * $line-height-ratio;
+}
+
+// Get color with shade
+@function shade($color, $percentage) {
+    @return mix(black, $color, $percentage);
+}
+
+// Get color with tint
+@function tint($color, $percentage) {
+    @return mix(white, $color, $percentage);
+}

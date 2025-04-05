@@ -1,0 +1,66 @@
+<div class="relationship-form">
+    <h2 class="relationship-form__title">Add System Relationship</h2>
+
+    <form [formGroup]="relationshipForm" (ngSubmit)="onSubmit()" class="relationship-form__form">
+        <div class="relationship-form__form-row">
+            <mat-form-field appearance="outline" class="relationship-form__form-field">
+                <mat-label>Source System</mat-label>
+                <mat-select formControlName="sourceSystemId">
+                    <mat-option *ngFor="let system of systems" [value]="system.id">
+                        {{ system.name }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="relationship-form__form-row">
+            <mat-form-field appearance="outline" class="relationship-form__form-field">
+                <mat-label>Target System</mat-label>
+                <mat-select formControlName="targetSystemId">
+                    <mat-option *ngFor="let system of systems" [value]="system.id">
+                        {{ system.name }}
+                    </mat-option>
+                </mat-select>
+                <mat-error
+                    *ngIf="relationshipForm.get('targetSystemId')?.invalid && relationshipForm.get('targetSystemId')?.touched">
+                    {{ getErrorMessage('targetSystemId') }}
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="relationship-form__form-row">
+            <mat-form-field appearance="outline" class="relationship-form__form-field">
+                <mat-label>Relationship Type</mat-label>
+                <mat-select formControlName="type">
+                    <mat-option *ngFor="let type of relationshipTypes" [value]="type">
+                        {{ type }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="relationshipForm.get('type')?.invalid && relationshipForm.get('type')?.touched">
+                    {{ getErrorMessage('type') }}
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="relationship-form__form-row">
+            <mat-form-field appearance="outline"
+                class="relationship-form__form-field relationship-form__form-field--full">
+                <mat-label>Description</mat-label>
+                <textarea matInput formControlName="description" rows="3"
+                    placeholder="Enter relationship description"></textarea>
+            </mat-form-field>
+        </div>
+
+        <div class="relationship-form__actions">
+            <button mat-button type="button" (click)="cancel()">Cancel</button>
+            <button mat-raised-button color="primary" type="submit" [disabled]="relationshipForm.invalid || isLoading">
+                Create Relationship
+            </button>
+        </div>
+    </form>
+</div>
+
+<div class="relationship-form__loading" *ngIf="isLoading">
+    <mat-spinner diameter="50"></mat-spinner>
+    <p>Loading systems...</p>
+</div>

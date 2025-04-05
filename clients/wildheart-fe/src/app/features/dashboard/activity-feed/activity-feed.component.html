@@ -1,0 +1,41 @@
+<div class="activity-feed-container">
+    <mat-card-header>
+        <mat-card-title>Recent Activity</mat-card-title>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Activity feed menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="/activity">
+                <mat-icon>history</mat-icon>
+                <span>View All Activity</span>
+            </button>
+        </mat-menu>
+    </mat-card-header>
+
+    <mat-card-content>
+        <mat-list>
+            <ng-container *ngFor="let activity of activities; let last = last">
+                <mat-list-item class="activity-item">
+                    <div class="activity-content">
+                        <div class="activity-icon" [ngClass]="getActivityTypeClass(activity.type)">
+                            <mat-icon>{{getActivityIcon(activity.type)}}</mat-icon>
+                        </div>
+                        <div class="activity-details">
+                            <div class="activity-header">
+                                <span class="activity-title">{{activity.title}}</span>
+                                <span class="activity-time">{{activity.time}}</span>
+                            </div>
+                            <p class="activity-description">{{activity.description}}</p>
+                            <div class="activity-actions" *ngIf="activity.link">
+                                <button mat-button color="primary" [routerLink]="activity.link">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </mat-list-item>
+                <mat-divider *ngIf="!last"></mat-divider>
+            </ng-container>
+        </mat-list>
+    </mat-card-content>
+</div>

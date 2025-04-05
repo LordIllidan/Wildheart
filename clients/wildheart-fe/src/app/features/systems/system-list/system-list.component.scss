@@ -1,0 +1,63 @@
+.system-list {
+    padding: 24px;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+    }
+
+    &__title {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    &__card {
+        margin-bottom: 24px;
+    }
+
+    &__filter {
+        width: 100%;
+        margin-bottom: 16px;
+    }
+
+    &__table-container {
+        position: relative;
+        min-height: 200px;
+        max-height: 600px;
+        overflow: auto;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    .mat-column-actions {
+        width: 120px;
+        text-align: center;
+    }
+
+    .mat-column-isKubernetes {
+        width: 100px;
+        text-align: center;
+    }
+
+    .mat-column-status {
+        width: 120px;
+    }
+
+    .text-primary {
+        color: var(--primary-color);
+    }
+
+    .text-muted {
+        color: var(--text-muted);
+    }
+
+    .mat-chip {
+        min-width: 80px;
+        justify-content: center;
+    }
+}

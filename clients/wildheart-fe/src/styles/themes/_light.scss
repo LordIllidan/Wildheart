@@ -1,0 +1,145 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+// Light theme variables
+:root {
+    // Colors
+    --color-background: #{$color-white};
+    --color-surface: #{$color-gray-50};
+    --color-surface-hover: #{$color-gray-100};
+    --color-surface-active: #{$color-gray-200};
+    --color-border: #{$color-gray-200};
+    --color-text: #{$color-gray-900};
+    --color-text-secondary: #{$color-gray-600};
+    --color-text-disabled: #{$color-gray-400};
+
+    // Shadows
+    --shadow-sm: #{$shadow-sm};
+    --shadow-md: #{$shadow-md};
+    --shadow-lg: #{$shadow-lg};
+
+    // Overlays
+    --overlay-light: rgba(255, 255, 255, 0.8);
+    --overlay-dark: rgba(0, 0, 0, 0.1);
+
+    // Glass effect
+    --glass-background: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+
+    // Card styles
+    --card-background: #{$color-white};
+    --card-border: #{$color-gray-200};
+    --card-shadow: #{$shadow-sm};
+
+    // Form styles
+    --input-background: #{$color-white};
+    --input-border: #{$color-gray-300};
+    --input-text: #{$color-gray-900};
+    --input-placeholder: #{$color-gray-500};
+
+    // Button styles
+    --button-primary-background: #{$color-primary};
+    --button-primary-text: #{$color-white};
+    --button-primary-border: #{$color-primary};
+    --button-primary-hover-background: #{darken($color-primary, 10%)};
+    --button-primary-hover-border: #{darken($color-primary, 10%)};
+
+    --button-secondary-background: #{$color-secondary};
+    --button-secondary-text: #{$color-white};
+    --button-secondary-border: #{$color-secondary};
+    --button-secondary-hover-background: #{darken($color-secondary, 10%)};
+    --button-secondary-hover-border: #{darken($color-secondary, 10%)};
+
+    // Link styles
+    --link-color: #{$color-primary};
+    --link-hover-color: #{darken($color-primary, 15%)};
+
+    // Selection
+    --selection-background: #{rgba($color-primary, 0.2)};
+    --selection-text: #{$color-gray-900};
+}
+
+// Light theme specific styles
+body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+// Card styles
+.card {
+    background-color: var(--card-background);
+    border-color: var(--card-border);
+    box-shadow: var(--card-shadow);
+}
+
+// Form styles
+.form-control {
+    background-color: var(--input-background);
+    border-color: var(--input-border);
+    color: var(--input-text);
+
+    &::placeholder {
+        color: var(--input-placeholder);
+    }
+
+    &:focus {
+        border-color: var(--button-primary-border);
+        box-shadow: 0 0 0 3px rgba($color-primary, 0.25);
+    }
+}
+
+// Button styles
+.btn-primary {
+    background-color: var(--button-primary-background);
+    color: var(--button-primary-text);
+    border-color: var(--button-primary-border);
+
+    &:hover {
+        background-color: var(--button-primary-hover-background);
+        border-color: var(--button-primary-hover-border);
+    }
+}
+
+.btn-secondary {
+    background-color: var(--button-secondary-background);
+    color: var(--button-secondary-text);
+    border-color: var(--button-secondary-border);
+
+    &:hover {
+        background-color: var(--button-secondary-hover-background);
+        border-color: var(--button-secondary-hover-border);
+    }
+}
+
+// Link styles
+a {
+    color: var(--link-color);
+
+    &:hover {
+        color: var(--link-hover-color);
+    }
+}
+
+// Selection styles
+::selection {
+    background-color: var(--selection-background);
+    color: var(--selection-text);
+}
+
+// Glass effect
+.glass {
+    background: var(--glass-background);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+}
+
+// Overlay styles
+.overlay-light {
+    background-color: var(--overlay-light);
+}
+
+.overlay-dark {
+    background-color: var(--overlay-dark);
+}

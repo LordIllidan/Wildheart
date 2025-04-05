@@ -1,0 +1,259 @@
+<div class="glass-demo-container">
+    <h1>Angular Material Glassmorphism Demo</h1>
+
+    <div class="demo-section">
+        <h2>Cards</h2>
+        <div class="demo-row">
+            <mat-card class="glass">
+                <mat-card-header>
+                    <mat-card-title>Glass Card</mat-card-title>
+                    <mat-card-subtitle>With glassmorphism effect</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>This card has a glassmorphism effect applied to it.</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button>LIKE</button>
+                    <button mat-button>SHARE</button>
+                </mat-card-actions>
+            </mat-card>
+
+            <mat-card class="glass glass-hover">
+                <mat-card-header>
+                    <mat-card-title>Hover Glass Card</mat-card-title>
+                    <mat-card-subtitle>With hover effect</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>This card has a glassmorphism effect with hover animation.</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button>LIKE</button>
+                    <button mat-button>SHARE</button>
+                </mat-card-actions>
+            </mat-card>
+
+            <mat-card class="glass-dark">
+                <mat-card-header>
+                    <mat-card-title>Dark Glass Card</mat-card-title>
+                    <mat-card-subtitle>With dark glassmorphism</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>This card has a dark glassmorphism effect applied to it.</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button>LIKE</button>
+                    <button mat-button>SHARE</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Form Elements</h2>
+        <div class="demo-row">
+            <div class="glass p-4">
+                <mat-form-field class="w-100">
+                    <mat-label>Name</mat-label>
+                    <input matInput [(ngModel)]="name" placeholder="Enter your name">
+                </mat-form-field>
+
+                <mat-form-field class="w-100">
+                    <mat-label>Email</mat-label>
+                    <input matInput [(ngModel)]="email" placeholder="Enter your email">
+                </mat-form-field>
+
+                <mat-form-field class="w-100">
+                    <mat-label>Select an option</mat-label>
+                    <mat-select [(ngModel)]="selectedOption">
+                        <mat-option value="option1">Option 1</mat-option>
+                        <mat-option value="option2">Option 2</mat-option>
+                        <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <div class="checkbox-container">
+                    <mat-checkbox [(ngModel)]="isChecked">Check me</mat-checkbox>
+                </div>
+
+                <div class="radio-container">
+                    <mat-radio-group [(ngModel)]="selectedRadio">
+                        <mat-radio-button value="radio1">Radio 1</mat-radio-button>
+                        <mat-radio-button value="radio2">Radio 2</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+
+                <div class="toggle-container">
+                    <mat-slide-toggle [(ngModel)]="isToggled">Toggle me</mat-slide-toggle>
+                </div>
+
+                <div class="slider-container">
+                    <mat-slider min="0" max="100" step="1">
+                        <input matSliderThumb [(ngModel)]="sliderValue">
+                    </mat-slider>
+                </div>
+
+                <div class="button-container">
+                    <button mat-raised-button color="primary">Submit</button>
+                    <button mat-button>Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Tabs</h2>
+        <div class="glass">
+            <mat-tab-group>
+                <mat-tab label="First">Content 1</mat-tab>
+                <mat-tab label="Second">Content 2</mat-tab>
+                <mat-tab label="Third">Content 3</mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>List</h2>
+        <div class="glass">
+            <mat-list>
+                <mat-list-item>Item 1</mat-list-item>
+                <mat-list-item>Item 2</mat-list-item>
+                <mat-list-item>Item 3</mat-list-item>
+                <mat-list-item>Item 4</mat-list-item>
+                <mat-list-item>Item 5</mat-list-item>
+            </mat-list>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Expansion Panel</h2>
+        <div class="glass">
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Expansion Panel
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            Click to expand
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p>This is the primary content of the panel.</p>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Stepper</h2>
+        <div class="glass">
+            <mat-stepper>
+                <mat-step label="Step 1">
+                    <p>This is the content of step 1</p>
+                </mat-step>
+                <mat-step label="Step 2">
+                    <p>This is the content of step 2</p>
+                </mat-step>
+                <mat-step label="Step 3">
+                    <p>This is the content of step 3</p>
+                </mat-step>
+            </mat-stepper>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Progress Indicators</h2>
+        <div class="demo-row">
+            <div class="glass p-4">
+                <h3>Progress Bar</h3>
+                <mat-progress-bar mode="determinate" value="70"></mat-progress-bar>
+            </div>
+
+            <div class="glass p-4">
+                <h3>Progress Spinner</h3>
+                <mat-progress-spinner mode="determinate" value="70"></mat-progress-spinner>
+            </div>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Datepicker</h2>
+        <div class="glass p-4">
+            <mat-form-field>
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Chips</h2>
+        <div class="glass p-4">
+            <mat-chip-listbox>
+                <mat-chip>One</mat-chip>
+                <mat-chip>Two</mat-chip>
+                <mat-chip>Three</mat-chip>
+                <mat-chip>Four</mat-chip>
+                <mat-chip>Five</mat-chip>
+            </mat-chip-listbox>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Table</h2>
+        <div class="glass">
+            <table mat-table [dataSource]="dataSource">
+                <ng-container matColumnDef="position">
+                    <th mat-header-cell *matHeaderCellDef> No. </th>
+                    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="weight">
+                    <th mat-header-cell *matHeaderCellDef> Weight </th>
+                    <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="symbol">
+                    <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                    <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Toolbar</h2>
+        <div class="glass">
+            <mat-toolbar color="primary">
+                <span>My Application</span>
+                <span class="spacer"></span>
+                <button mat-icon-button>
+                    <mat-icon>menu</mat-icon>
+                </button>
+            </mat-toolbar>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Grid List</h2>
+        <div class="glass">
+            <mat-grid-list cols="3" rowHeight="100px" gutterSize="16">
+                <mat-grid-tile>1</mat-grid-tile>
+                <mat-grid-tile>2</mat-grid-tile>
+                <mat-grid-tile>3</mat-grid-tile>
+                <mat-grid-tile>4</mat-grid-tile>
+                <mat-grid-tile>5</mat-grid-tile>
+                <mat-grid-tile>6</mat-grid-tile>
+            </mat-grid-list>
+        </div>
+    </div>
+</div>

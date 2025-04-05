@@ -1,0 +1,60 @@
+@import '../../../../styles/abstracts/variables';
+@import '../../../../styles/abstracts/mixins';
+
+.project-list-container {
+    padding: 20px;
+    @include glass;
+}
+
+mat-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    @include glass;
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-field {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.table-container {
+    position: relative;
+    min-height: 200px;
+    max-height: 600px;
+    overflow: auto;
+    @include glass;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-column-actions {
+    width: 120px;
+    text-align: center;
+}
+
+.mat-column-progress {
+    width: 200px;
+}
+
+.progress-text {
+    margin-left: 8px;
+    font-size: 12px;
+}
+
+mat-chip {
+    min-width: 80px;
+    justify-content: center;
+}
+
+.mat-row:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}

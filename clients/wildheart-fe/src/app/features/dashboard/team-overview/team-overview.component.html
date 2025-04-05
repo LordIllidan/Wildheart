@@ -1,0 +1,49 @@
+<div class="team-overview-container">
+    <mat-card-header>
+        <mat-card-title>Team Overview</mat-card-title>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Team overview menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="/teams">
+                <mat-icon>group</mat-icon>
+                <span>View All Teams</span>
+            </button>
+            <button mat-menu-item routerLink="/teams/new">
+                <mat-icon>add</mat-icon>
+                <span>Create New Team</span>
+            </button>
+        </mat-menu>
+    </mat-card-header>
+
+    <mat-card-content>
+        <mat-list>
+            <mat-list-item *ngFor="let team of teams" class="team-item">
+                <div class="team-content">
+                    <div class="team-info">
+                        <mat-icon matListItemIcon class="team-icon">group</mat-icon>
+                        <div class="team-details">
+                            <span class="team-name">{{team.name}}</span>
+                            <div class="team-meta">
+                                <span class="team-members">{{team.memberCount}} members</span>
+                                <mat-chip-listbox>
+                                    <mat-chip [color]="getRoleColor(team.role)" selected>
+                                        {{team.role}}
+                                    </mat-chip>
+                                </mat-chip-listbox>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-actions">
+                        <button mat-icon-button [routerLink]="['/teams', team.id]" color="primary">
+                            <mat-icon>visibility</mat-icon>
+                        </button>
+                        <button mat-icon-button [routerLink]="['/teams', team.id, 'edit']" color="accent">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</div>

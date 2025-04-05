@@ -1,0 +1,252 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+// Margin utilities
+@each $breakpoint in map-keys($breakpoints) {
+    @include respond-to($breakpoint) {
+        @each $size, $value in $spacing {
+
+            // Margin all sides
+            .m#{$breakpoint}-#{$size} {
+                margin: $value !important;
+            }
+
+            // Margin top
+            .mt#{$breakpoint}-#{$size} {
+                margin-top: $value !important;
+            }
+
+            // Margin right
+            .mr#{$breakpoint}-#{$size} {
+                margin-right: $value !important;
+            }
+
+            // Margin bottom
+            .mb#{$breakpoint}-#{$size} {
+                margin-bottom: $value !important;
+            }
+
+            // Margin left
+            .ml#{$breakpoint}-#{$size} {
+                margin-left: $value !important;
+            }
+
+            // Margin horizontal
+            .mx#{$breakpoint}-#{$size} {
+                margin-left: $value !important;
+                margin-right: $value !important;
+            }
+
+            // Margin vertical
+            .my#{$breakpoint}-#{$size} {
+                margin-top: $value !important;
+                margin-bottom: $value !important;
+            }
+
+            // Margin auto
+            .m#{$breakpoint}-auto {
+                margin: auto !important;
+            }
+
+            .mt#{$breakpoint}-auto {
+                margin-top: auto !important;
+            }
+
+            .mr#{$breakpoint}-auto {
+                margin-right: auto !important;
+            }
+
+            .mb#{$breakpoint}-auto {
+                margin-bottom: auto !important;
+            }
+
+            .ml#{$breakpoint}-auto {
+                margin-left: auto !important;
+            }
+
+            .mx#{$breakpoint}-auto {
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            .my#{$breakpoint}-auto {
+                margin-top: auto !important;
+                margin-bottom: auto !important;
+            }
+        }
+    }
+}
+
+// Padding utilities
+@each $breakpoint in map-keys($breakpoints) {
+    @include respond-to($breakpoint) {
+        @each $size, $value in $spacing {
+
+            // Padding all sides
+            .p#{$breakpoint}-#{$size} {
+                padding: $value !important;
+            }
+
+            // Padding top
+            .pt#{$breakpoint}-#{$size} {
+                padding-top: $value !important;
+            }
+
+            // Padding right
+            .pr#{$breakpoint}-#{$size} {
+                padding-right: $value !important;
+            }
+
+            // Padding bottom
+            .pb#{$breakpoint}-#{$size} {
+                padding-bottom: $value !important;
+            }
+
+            // Padding left
+            .pl#{$breakpoint}-#{$size} {
+                padding-left: $value !important;
+            }
+
+            // Padding horizontal
+            .px#{$breakpoint}-#{$size} {
+                padding-left: $value !important;
+                padding-right: $value !important;
+            }
+
+            // Padding vertical
+            .py#{$breakpoint}-#{$size} {
+                padding-top: $value !important;
+                padding-bottom: $value !important;
+            }
+        }
+    }
+}
+
+// Gap utilities
+@each $breakpoint in map-keys($breakpoints) {
+    @include respond-to($breakpoint) {
+        @each $size, $value in $spacing {
+            .gap#{$breakpoint}-#{$size} {
+                gap: $value !important;
+            }
+
+            .gap-x#{$breakpoint}-#{$size} {
+                column-gap: $value !important;
+            }
+
+            .gap-y#{$breakpoint}-#{$size} {
+                row-gap: $value !important;
+            }
+        }
+    }
+}
+
+// Space between utilities
+@each $breakpoint in map-keys($breakpoints) {
+    @include respond-to($breakpoint) {
+        @each $size, $value in $spacing {
+            .space-x#{$breakpoint}-#{$size} {
+                >*+* {
+                    margin-left: $value !important;
+                }
+            }
+
+            .space-y#{$breakpoint}-#{$size} {
+                >*+* {
+                    margin-top: $value !important;
+                }
+            }
+        }
+    }
+}
+
+// Negative margin utilities
+@each $breakpoint in map-keys($breakpoints) {
+    @include respond-to($breakpoint) {
+        @each $size, $value in $spacing {
+            .-m#{$breakpoint}-#{$size} {
+                margin: -$value !important;
+            }
+
+            .-mt#{$breakpoint}-#{$size} {
+                margin-top: -$value !important;
+            }
+
+            .-mr#{$breakpoint}-#{$size} {
+                margin-right: -$value !important;
+            }
+
+            .-mb#{$breakpoint}-#{$size} {
+                margin-bottom: -$value !important;
+            }
+
+            .-ml#{$breakpoint}-#{$size} {
+                margin-left: -$value !important;
+            }
+
+            .-mx#{$breakpoint}-#{$size} {
+                margin-left: -$value !important;
+                margin-right: -$value !important;
+            }
+
+            .-my#{$breakpoint}-#{$size} {
+                margin-top: -$value !important;
+                margin-bottom: -$value !important;
+            }
+        }
+    }
+}
+
+// Container padding utilities
+@each $breakpoint in map-keys($breakpoints) {
+    @include respond-to($breakpoint) {
+        @each $size, $value in $spacing {
+            .container-p#{$breakpoint}-#{$size} {
+                padding-left: $value !important;
+                padding-right: $value !important;
+            }
+        }
+    }
+}
+
+// Stack utilities
+.stack {
+    display: flex;
+    flex-direction: column;
+
+    >*+* {
+        margin-top: var(--stack-gap, #{$spacing-md});
+    }
+}
+
+.stack-horizontal {
+    display: flex;
+    flex-direction: row;
+
+    >*+* {
+        margin-left: var(--stack-gap, #{$spacing-md});
+    }
+}
+
+// Responsive stack
+@each $breakpoint in map-keys($breakpoints) {
+    @include respond-to($breakpoint) {
+        .stack#{$breakpoint}-horizontal {
+            flex-direction: row;
+
+            >*+* {
+                margin-top: 0;
+                margin-left: var(--stack-gap, #{$spacing-md});
+            }
+        }
+
+        .stack#{$breakpoint}-vertical {
+            flex-direction: column;
+
+            >*+* {
+                margin-left: 0;
+                margin-top: var(--stack-gap, #{$spacing-md});
+            }
+        }
+    }
+}

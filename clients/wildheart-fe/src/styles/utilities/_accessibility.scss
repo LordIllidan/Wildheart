@@ -1,0 +1,258 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+// Screen reader only
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+// Screen reader only but focusable
+.sr-only-focusable {
+
+    &:active,
+    &:focus {
+        position: static;
+        width: auto;
+        height: auto;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+    }
+}
+
+// Skip link
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: $color-primary;
+    color: $color-white;
+    padding: 8px;
+    z-index: $z-index-100;
+
+    &:focus {
+        top: 0;
+    }
+}
+
+// Focus styles
+.focus-ring {
+    &:focus {
+        outline: 2px solid $color-primary;
+        outline-offset: 2px;
+    }
+
+    &:focus:not(:focus-visible) {
+        outline: none;
+    }
+
+    &:focus-visible {
+        outline: 2px solid $color-primary;
+        outline-offset: 2px;
+    }
+}
+
+// High contrast mode
+@media (forced-colors: active) {
+    .high-contrast {
+        border: 2px solid currentColor;
+    }
+}
+
+// Reduced motion
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+// Color contrast
+.high-contrast-text {
+    color: $color-white;
+    text-shadow: 1px 1px 2px rgba($color-black, 0.8);
+}
+
+// Focus visible outline
+:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+}
+
+// Skip to main content
+.skip-to-main {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: $color-primary;
+    color: $color-white;
+    padding: 8px;
+    z-index: $z-index-100;
+
+    &:focus {
+        top: 0;
+    }
+}
+
+// ARIA hidden
+[aria-hidden="true"] {
+    display: none !important;
+}
+
+// ARIA expanded
+[aria-expanded="true"] {
+    .icon-expand {
+        transform: rotate(180deg);
+    }
+}
+
+// ARIA disabled
+[aria-disabled="true"] {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+// ARIA required
+[aria-required="true"] {
+    &::after {
+        content: "*";
+        color: $color-error;
+        margin-left: 4px;
+    }
+}
+
+// ARIA invalid
+[aria-invalid="true"] {
+    border-color: $color-error;
+
+    &:focus {
+        box-shadow: 0 0 0 2px rgba($color-error, 0.25);
+    }
+}
+
+// ARIA busy
+[aria-busy="true"] {
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($color-gray-200, 0.5);
+        animation: pulse 1s infinite;
+    }
+}
+
+// ARIA live regions
+[aria-live="polite"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+[aria-live="assertive"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+// Keyboard navigation
+:focus {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+}
+
+// Touch target size
+.touch-target {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 12px;
+}
+
+// Text size adjustment
+.text-size-adjust {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+// Line height for readability
+.readable {
+    line-height: 1.6;
+    max-width: 70ch;
+}
+
+// Color contrast utilities
+.contrast-high {
+    color: $color-white;
+    background-color: $color-black;
+}
+
+.contrast-low {
+    color: $color-gray-600;
+    background-color: $color-gray-200;
+}
+
+// Reduced motion utilities
+.reduced-motion {
+    @media (prefers-reduced-motion: reduce) {
+        * {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+}
+
+// Print styles
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    .print-only {
+        display: block !important;
+    }
+
+    a[href]::after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]::after {
+        content: " (" attr(title) ")";
+    }
+}

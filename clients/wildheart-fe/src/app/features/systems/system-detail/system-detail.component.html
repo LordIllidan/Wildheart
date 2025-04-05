@@ -1,0 +1,148 @@
+<div class="system-detail" *ngIf="!isLoading && system">
+    <div class="system-detail__header">
+        <div class="system-detail__title-container">
+            <h1 class="system-detail__title">{{ system.name }}</h1>
+            <mat-chip [color]="getStatusColor(system.status)" selected class="system-detail__status">
+                {{ system.status }}
+            </mat-chip>
+        </div>
+        <div class="system-detail__actions">
+            <button mat-raised-button color="primary" (click)="editSystem()">
+                <mat-icon>edit</mat-icon>
+                Edit
+            </button>
+            <button mat-raised-button color="warn" (click)="deleteSystem()">
+                <mat-icon>delete</mat-icon>
+                Delete
+            </button>
+        </div>
+    </div>
+
+    <mat-card class="system-detail__card">
+        <mat-card-content>
+            <mat-tab-group [(selectedIndex)]="activeTab">
+                <!-- Details Tab -->
+                <mat-tab label="Details">
+                    <div class="system-detail__tab-content">
+                        <div class="system-detail__info-grid">
+                            <div class="system-detail__info-item">
+                                <h3 class="system-detail__info-label">ID</h3>
+                                <p class="system-detail__info-value">{{ system.id }}</p>
+                            </div>
+                            <div class="system-detail__info-item">
+                                <h3 class="system-detail__info-label">Namespace</h3>
+                                <p class="system-detail__info-value">{{ system.namespace }}</p>
+                            </div>
+                            <div class="system-detail__info-item">
+                                <h3 class="system-detail__info-label">IP Address</h3>
+                                <p class="system-detail__info-value">{{ system.ipAddress }}</p>
+                            </div>
+                            <div class="system-detail__info-item">
+                                <h3 class="system-detail__info-label">Kubernetes</h3>
+                                <p class="system-detail__info-value">
+                                    <mat-icon [class.text-primary]="system.isKubernetes"
+                                        [class.text-muted]="!system.isKubernetes">
+                                        {{ system.isKubernetes ? 'check_circle' : 'cancel' }}
+                                    </mat-icon>
+                                    {{ system.isKubernetes ? 'Yes' : 'No' }}
+                                </p>
+                            </div>
+                            <div class="system-detail__info-item">
+                                <h3 class="system-detail__info-label">Project</h3>
+                                <p class="system-detail__info-value">{{ system.project?.name || '-' }}</p>
+                            </div>
+                            <div class="system-detail__info-item">
+                                <h3 class="system-detail__info-label">Team</h3>
+                                <p class="system-detail__info-value">{{ system.team?.name || '-' }}</p>
+                            </div>
+                            <div class="system-detail__info-item">
+                                <h3 class="system-detail__info-label">Created At</h3>
+                                <p class="system-detail__info-value">{{ system.createdAt | date:'medium' }}</p>
+                            </div>
+                            <div class="system-detail__info-item">
+                                <h3 class="system-detail__info-label">Updated At</h3>
+                                <p class="system-detail__info-value">{{ system.updatedAt | date:'medium' }}</p>
+                            </div>
+                        </div>
+
+                        <div class="system-detail__description" *ngIf="system.description">
+                            <h3 class="system-detail__description-title">Description</h3>
+                            <p class="system-detail__description-text">{{ system.description }}</p>
+                        </div>
+                    </div>
+                </mat-tab>
+
+                <!-- Relationships Tab -->
+                <mat-tab label="Relationships">
+                    <div class="system-detail__tab-content">
+                        <div class="system-detail__relationships-header">
+                            <h2 class="system-detail__relationships-title">System Relationships</h2>
+                            <button mat-raised-button color="primary" (click)="openRelationshipForm()">
+                                <mat-icon>add</mat-icon>
+                                Add Relationship
+                            </button>
+                        </div>
+
+                        <div class="system-detail__relationships-list" *ngIf="relationships.length > 0">
+                            <mat-card class="system-detail__relationship-card"
+                                *ngFor="let relationship of relationships">
+                                <mat-card-content>
+                                    <div class="system-detail__relationship-info">
+                                        <div class="system-detail__relationship-type">
+                                            <mat-chip color="primary" selected>{{ relationship.type }}</mat-chip>
+                                        </div>
+                                        <div class="system-detail__relationship-systems">
+                                            <div class="system-detail__relationship-system">
+                                                <span class="system-detail__relationship-label">Source:</span>
+                                                <span class="system-detail__relationship-value">{{
+                                                    relationship.sourceSystem?.name }}</span>
+                                            </div>
+                                            <div class="system-detail__relationship-system">
+                                                <span class="system-detail__relationship-label">Target:</span>
+                                                <span class="system-detail__relationship-value">{{
+                                                    relationship.targetSystem?.name }}</span>
+                                            </div>
+                                        </div>
+                                        <div class="system-detail__relationship-description"
+                                            *ngIf="relationship.description">
+                                            <p>{{ relationship.description }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="system-detail__relationship-actions">
+                                        <button mat-icon-button color="warn"
+                                            (click)="deleteRelationship(relationship.id)">
+                                            <mat-icon>delete</mat-icon>
+                                        </button>
+                                    </div>
+                                </mat-card-content>
+                            </mat-card>
+                        </div>
+
+                        <div class="system-detail__no-relationships" *ngIf="relationships.length === 0">
+                            <mat-icon class="system-detail__no-relationships-icon">link_off</mat-icon>
+                            <p class="system-detail__no-relationships-text">No relationships found for this system.</p>
+                            <button mat-raised-button color="primary" (click)="openRelationshipForm()">
+                                <mat-icon>add</mat-icon>
+                                Add Relationship
+                            </button>
+                        </div>
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<div class="system-detail__loading" *ngIf="isLoading">
+    <mat-spinner diameter="50"></mat-spinner>
+    <p>Loading system details...</p>
+</div>
+
+<div class="system-detail__error" *ngIf="!isLoading && !system">
+    <mat-icon class="system-detail__error-icon">error_outline</mat-icon>
+    <p class="system-detail__error-text">System not found or an error occurred.</p>
+    <button mat-raised-button color="primary" routerLink="/systems">
+        <mat-icon>arrow_back</mat-icon>
+        Back to Systems
+    </button>
+</div>

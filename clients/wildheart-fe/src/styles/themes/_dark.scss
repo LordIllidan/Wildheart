@@ -1,0 +1,237 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+// Dark theme variables
+[data-theme="dark"] {
+    // Colors
+    --color-background: #{$color-gray-900};
+    --color-surface: #{$color-gray-800};
+    --color-surface-hover: #{$color-gray-700};
+    --color-surface-active: #{$color-gray-600};
+    --color-border: #{$color-gray-700};
+    --color-text: #{$color-gray-100};
+    --color-text-secondary: #{$color-gray-400};
+    --color-text-disabled: #{$color-gray-500};
+
+    // Shadows
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+
+    // Overlays
+    --overlay-light: rgba(0, 0, 0, 0.8);
+    --overlay-dark: rgba(0, 0, 0, 0.5);
+
+    // Glass effect
+    --glass-background: rgba(17, 24, 39, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    // Card styles
+    --card-background: #{$color-gray-800};
+    --card-border: #{$color-gray-700};
+    --card-shadow: var(--shadow-sm);
+
+    // Form styles
+    --input-background: #{$color-gray-800};
+    --input-border: #{$color-gray-600};
+    --input-text: #{$color-gray-100};
+    --input-placeholder: #{$color-gray-500};
+
+    // Button styles
+    --button-primary-background: #{$color-primary};
+    --button-primary-text: #{$color-white};
+    --button-primary-border: #{$color-primary};
+    --button-primary-hover-background: #{lighten($color-primary, 10%)};
+    --button-primary-hover-border: #{lighten($color-primary, 10%)};
+
+    --button-secondary-background: #{$color-secondary};
+    --button-secondary-text: #{$color-white};
+    --button-secondary-border: #{$color-secondary};
+    --button-secondary-hover-background: #{lighten($color-secondary, 10%)};
+    --button-secondary-hover-border: #{lighten($color-secondary, 10%)};
+
+    // Link styles
+    --link-color: #{lighten($color-primary, 15%)};
+    --link-hover-color: #{lighten($color-primary, 25%)};
+
+    // Selection
+    --selection-background: #{rgba($color-primary, 0.3)};
+    --selection-text: #{$color-white};
+}
+
+// Dark theme specific styles
+[data-theme="dark"] {
+    body {
+        background-color: var(--color-background);
+        color: var(--color-text);
+    }
+
+    // Card styles
+    .card {
+        background-color: var(--card-background);
+        border-color: var(--card-border);
+        box-shadow: var(--card-shadow);
+
+        .card-header {
+            background-color: var(--color-surface);
+            border-color: var(--color-border);
+        }
+
+        .card-footer {
+            background-color: var(--color-surface);
+            border-color: var(--color-border);
+        }
+    }
+
+    // Form styles
+    .form-control {
+        background-color: var(--input-background);
+        border-color: var(--input-border);
+        color: var(--input-text);
+
+        &::placeholder {
+            color: var(--input-placeholder);
+        }
+
+        &:focus {
+            border-color: var(--button-primary-border);
+            box-shadow: 0 0 0 3px rgba($color-primary, 0.25);
+        }
+
+        &:disabled,
+        &[readonly] {
+            background-color: var(--color-surface);
+        }
+    }
+
+    // Button styles
+    .btn-primary {
+        background-color: var(--button-primary-background);
+        color: var(--button-primary-text);
+        border-color: var(--button-primary-border);
+
+        &:hover {
+            background-color: var(--button-primary-hover-background);
+            border-color: var(--button-primary-hover-border);
+        }
+    }
+
+    .btn-secondary {
+        background-color: var(--button-secondary-background);
+        color: var(--button-secondary-text);
+        border-color: var(--button-secondary-border);
+
+        &:hover {
+            background-color: var(--button-secondary-hover-background);
+            border-color: var(--button-secondary-hover-border);
+        }
+    }
+
+    // Link styles
+    a {
+        color: var(--link-color);
+
+        &:hover {
+            color: var(--link-hover-color);
+        }
+    }
+
+    // Selection styles
+    ::selection {
+        background-color: var(--selection-background);
+        color: var(--selection-text);
+    }
+
+    // Glass effect
+    .glass {
+        background: var(--glass-background);
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--glass-shadow);
+    }
+
+    // Overlay styles
+    .overlay-light {
+        background-color: var(--overlay-light);
+    }
+
+    .overlay-dark {
+        background-color: var(--overlay-dark);
+    }
+
+    // Table styles
+    table {
+        color: var(--color-text);
+
+        thead th {
+            background-color: var(--color-surface);
+            border-color: var(--color-border);
+        }
+
+        tbody td {
+            border-color: var(--color-border);
+        }
+    }
+
+    // Modal styles
+    .modal-content {
+        background-color: var(--color-surface);
+        border-color: var(--color-border);
+    }
+
+    .modal-header {
+        border-bottom-color: var(--color-border);
+    }
+
+    .modal-footer {
+        border-top-color: var(--color-border);
+    }
+
+    // Dropdown styles
+    .dropdown-menu {
+        background-color: var(--color-surface);
+        border-color: var(--color-border);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .dropdown-item {
+        color: var(--color-text);
+
+        &:hover {
+            background-color: var(--color-surface-hover);
+        }
+
+        &:active {
+            background-color: var(--color-surface-active);
+        }
+    }
+
+    // Alert styles
+    .alert {
+        background-color: var(--color-surface);
+        border-color: var(--color-border);
+    }
+
+    // Badge styles
+    .badge {
+        background-color: var(--color-surface);
+        color: var(--color-text);
+    }
+
+    // Progress bar styles
+    .progress {
+        background-color: var(--color-surface);
+    }
+
+    // List group styles
+    .list-group-item {
+        background-color: var(--color-surface);
+        border-color: var(--color-border);
+        color: var(--color-text);
+
+        &:hover {
+            background-color: var(--color-surface-hover);
+        }
+    }
+}

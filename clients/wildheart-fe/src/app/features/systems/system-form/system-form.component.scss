@@ -1,0 +1,58 @@
+.system-form {
+    padding: 24px;
+
+    &__header {
+        margin-bottom: 24px;
+    }
+
+    &__title {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    &__card {
+        margin-bottom: 24px;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &__form-row {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    &__form-field {
+        flex: 1;
+        min-width: 250px;
+    }
+
+    &__form-field--full {
+        width: 100%;
+    }
+
+    &__checkbox {
+        margin: 16px 0;
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 16px;
+        margin-top: 24px;
+    }
+
+    &__loading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 48px 0;
+        text-align: center;
+    }
+}

@@ -1,0 +1,67 @@
+@import '../../../../styles/abstracts/variables';
+@import '../../../../styles/abstracts/mixins';
+
+
+.system-overview-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    color: var(--text-color);
+    @include glass;
+}
+
+mat-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+mat-card-title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+mat-card-content {
+    flex: 1;
+    overflow: auto;
+    padding: 0 1rem 1rem;
+}
+
+.system-table {
+    width: 100%;
+    background: transparent;
+
+    th {
+        color: var(--text-color);
+        font-weight: 500;
+        opacity: 0.8;
+    }
+
+    td {
+        color: var(--text-color);
+    }
+
+    tr.mat-row:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+}
+
+.mat-column-actions {
+    width: 100px;
+    text-align: right;
+}
+
+mat-chip {
+    min-width: 80px;
+    justify-content: center;
+}
+
+mat-paginator {
+    background: transparent;
+    color: var(--text-color);
+}

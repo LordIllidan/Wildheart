@@ -1,0 +1,270 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+// Text colors
+@each $name, $color in $colors {
+    .text-#{$name} {
+        color: $color !important;
+    }
+
+    .text-#{$name}-hover {
+        &:hover {
+            color: $color !important;
+        }
+    }
+}
+
+// Background colors
+@each $name, $color in $colors {
+    .bg-#{$name} {
+        background-color: $color !important;
+    }
+
+    .bg-#{$name}-hover {
+        &:hover {
+            background-color: $color !important;
+        }
+    }
+}
+
+// Border colors
+@each $name, $color in $colors {
+    .border-#{$name} {
+        border-color: $color !important;
+    }
+
+    .border-#{$name}-hover {
+        &:hover {
+            border-color: $color !important;
+        }
+    }
+}
+
+// Fill colors
+@each $name, $color in $colors {
+    .fill-#{$name} {
+        fill: $color !important;
+    }
+
+    .fill-#{$name}-hover {
+        &:hover {
+            fill: $color !important;
+        }
+    }
+}
+
+// Stroke colors
+@each $name, $color in $colors {
+    .stroke-#{$name} {
+        stroke: $color !important;
+    }
+
+    .stroke-#{$name}-hover {
+        &:hover {
+            stroke: $color !important;
+        }
+    }
+}
+
+// Opacity utilities
+@each $opacity in (0, 25, 50, 75, 100) {
+    .opacity-#{$opacity} {
+        opacity: ($opacity / 100) !important;
+    }
+}
+
+// Color with opacity
+@each $name, $color in $colors {
+    @each $opacity in (0, 25, 50, 75, 100) {
+        .text-#{$name}-#{$opacity} {
+            color: rgba($color, $opacity / 100) !important;
+        }
+
+        .bg-#{$name}-#{$opacity} {
+            background-color: rgba($color, $opacity / 100) !important;
+        }
+
+        .border-#{$name}-#{$opacity} {
+            border-color: rgba($color, $opacity / 100) !important;
+        }
+    }
+}
+
+// Gradient utilities
+.gradient-primary {
+    background: linear-gradient(135deg, $color-primary 0%, darken($color-primary, 15%) 100%);
+}
+
+.gradient-secondary {
+    background: linear-gradient(135deg, $color-secondary 0%, darken($color-secondary, 15%) 100%);
+}
+
+.gradient-success {
+    background: linear-gradient(135deg, $color-success 0%, darken($color-success, 15%) 100%);
+}
+
+.gradient-danger {
+    background: linear-gradient(135deg, $color-error 0%, darken($color-error, 15%) 100%);
+}
+
+.gradient-warning {
+    background: linear-gradient(135deg, $color-warning 0%, darken($color-warning, 15%) 100%);
+}
+
+.gradient-info {
+    background: linear-gradient(135deg, $color-info 0%, darken($color-info, 15%) 100%);
+}
+
+// Gradient text
+@each $name, $color in $colors {
+    .text-gradient-#{$name} {
+        background: linear-gradient(135deg, $color 0%, darken($color, 15%) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+}
+
+// Color scheme utilities
+.color-scheme-light {
+    color-scheme: light;
+}
+
+.color-scheme-dark {
+    color-scheme: dark;
+}
+
+// Color transition utilities
+.color-transition {
+    transition: color $transition-fast, background-color $transition-fast, border-color $transition-fast, fill $transition-fast, stroke $transition-fast;
+}
+
+// Color mix blend mode utilities
+.blend-normal {
+    mix-blend-mode: normal;
+}
+
+.blend-multiply {
+    mix-blend-mode: multiply;
+}
+
+.blend-screen {
+    mix-blend-mode: screen;
+}
+
+.blend-overlay {
+    mix-blend-mode: overlay;
+}
+
+.blend-darken {
+    mix-blend-mode: darken;
+}
+
+.blend-lighten {
+    mix-blend-mode: lighten;
+}
+
+.blend-color-dodge {
+    mix-blend-mode: color-dodge;
+}
+
+.blend-color-burn {
+    mix-blend-mode: color-burn;
+}
+
+.blend-hard-light {
+    mix-blend-mode: hard-light;
+}
+
+.blend-soft-light {
+    mix-blend-mode: soft-light;
+}
+
+.blend-difference {
+    mix-blend-mode: difference;
+}
+
+.blend-exclusion {
+    mix-blend-mode: exclusion;
+}
+
+.blend-hue {
+    mix-blend-mode: hue;
+}
+
+.blend-saturation {
+    mix-blend-mode: saturation;
+}
+
+.blend-color {
+    mix-blend-mode: color;
+}
+
+.blend-luminosity {
+    mix-blend-mode: luminosity;
+}
+
+// Background blend mode utilities
+.bg-blend-normal {
+    background-blend-mode: normal;
+}
+
+.bg-blend-multiply {
+    background-blend-mode: multiply;
+}
+
+.bg-blend-screen {
+    background-blend-mode: screen;
+}
+
+.bg-blend-overlay {
+    background-blend-mode: overlay;
+}
+
+.bg-blend-darken {
+    background-blend-mode: darken;
+}
+
+.bg-blend-lighten {
+    background-blend-mode: lighten;
+}
+
+.bg-blend-color-dodge {
+    background-blend-mode: color-dodge;
+}
+
+.bg-blend-color-burn {
+    background-blend-mode: color-burn;
+}
+
+.bg-blend-hard-light {
+    background-blend-mode: hard-light;
+}
+
+.bg-blend-soft-light {
+    background-blend-mode: soft-light;
+}
+
+.bg-blend-difference {
+    background-blend-mode: difference;
+}
+
+.bg-blend-exclusion {
+    background-blend-mode: exclusion;
+}
+
+.bg-blend-hue {
+    background-blend-mode: hue;
+}
+
+.bg-blend-saturation {
+    background-blend-mode: saturation;
+}
+
+.bg-blend-color {
+    background-blend-mode: color;
+}
+
+.bg-blend-luminosity {
+    background-blend-mode: luminosity;
+}

@@ -1,0 +1,43 @@
+<div class="dashboard-container">
+    <mat-card>
+        <div class="dashboard-header">
+            <h1>Dashboard</h1>
+            <div class="dashboard-actions">
+                <button mat-raised-button color="primary" routerLink="/systems">
+                    <mat-icon>add</mat-icon>
+                    New System
+                </button>
+                <button mat-raised-button color="accent" routerLink="/projects">
+                    <mat-icon>add</mat-icon>
+                    New Project
+                </button>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <mat-grid-list cols="2" rowHeight="400px" gutterSize="16">
+                <mat-grid-tile>
+                    <mat-card>
+                        <app-system-overview></app-system-overview>
+                    </mat-card>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-card>
+                        <app-project-overview></app-project-overview>
+                    </mat-card>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-card>
+                        <app-team-overview></app-team-overview>
+                    </mat-card>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-card>
+                        <app-activity-feed></app-activity-feed>
+                    </mat-card>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+    </mat-card>
+</div>
+<app-glass-demo></app-glass-demo>

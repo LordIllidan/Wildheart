@@ -1,0 +1,301 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+// Base card styles
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: $color-white;
+    background-clip: border-box;
+    border: 1px solid $color-gray-200;
+    border-radius: $border-radius-lg;
+    box-shadow: $shadow-sm;
+    transition: transform $transition-fast, box-shadow $transition-fast;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: $shadow-md;
+    }
+}
+
+// Card header
+.card-header {
+    padding: $spacing-md;
+    margin-bottom: 0;
+    background-color: rgba($color-gray-100, 0.5);
+    border-bottom: 1px solid $color-gray-200;
+    border-top-left-radius: $border-radius-lg;
+    border-top-right-radius: $border-radius-lg;
+
+    &:first-child {
+        border-radius: calc($border-radius-lg - 1px);
+    }
+}
+
+// Card body
+.card-body {
+    flex: 1 1 auto;
+    padding: $spacing-md;
+    color: $color-gray-800;
+}
+
+// Card footer
+.card-footer {
+    padding: $spacing-md;
+    background-color: rgba($color-gray-100, 0.5);
+    border-top: 1px solid $color-gray-200;
+    border-bottom-left-radius: $border-radius-lg;
+    border-bottom-right-radius: $border-radius-lg;
+
+    &:last-child {
+        border-radius: calc($border-radius-lg - 1px);
+    }
+}
+
+// Card title
+.card-title {
+    margin-bottom: $spacing-sm;
+    font-size: $font-size-lg;
+    font-weight: 600;
+    color: $color-gray-900;
+}
+
+// Card subtitle
+.card-subtitle {
+    margin-top: -$spacing-xs;
+    margin-bottom: $spacing-sm;
+    font-size: $font-size-base;
+    color: $color-gray-600;
+}
+
+// Card text
+.card-text {
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// Card image
+.card-img-top {
+    width: 100%;
+    border-top-left-radius: calc($border-radius-lg - 1px);
+    border-top-right-radius: calc($border-radius-lg - 1px);
+}
+
+.card-img-bottom {
+    width: 100%;
+    border-bottom-right-radius: calc($border-radius-lg - 1px);
+    border-bottom-left-radius: calc($border-radius-lg - 1px);
+}
+
+// Card image overlays
+.card-img-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: $spacing-md;
+    border-radius: calc($border-radius-lg - 1px);
+    background: linear-gradient(to bottom, rgba($color-black, 0) 0%, rgba($color-black, 0.7) 100%);
+    color: $color-white;
+}
+
+// Card groups
+.card-group {
+    display: flex;
+    flex-flow: row wrap;
+
+    >.card {
+        flex: 1 0 0%;
+        margin-bottom: 0;
+
+        +.card {
+            margin-left: 0;
+            border-left: 0;
+        }
+
+        &:not(:last-child) {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+
+            .card-img-top,
+            .card-header {
+                border-top-right-radius: 0;
+            }
+
+            .card-img-bottom,
+            .card-footer {
+                border-bottom-right-radius: 0;
+            }
+        }
+
+        &:not(:first-child) {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+
+            .card-img-top,
+            .card-header {
+                border-top-left-radius: 0;
+            }
+
+            .card-img-bottom,
+            .card-footer {
+                border-bottom-left-radius: 0;
+            }
+        }
+    }
+}
+
+// Card deck
+.card-deck {
+    display: flex;
+    flex-flow: row wrap;
+    margin-right: -$spacing-md;
+    margin-left: -$spacing-md;
+
+    .card {
+        flex: 1 0 0%;
+        margin-right: $spacing-md;
+        margin-left: $spacing-md;
+    }
+}
+
+// Card columns
+.card-columns {
+    column-count: 3;
+    column-gap: $spacing-md;
+
+    .card {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: $spacing-md;
+    }
+}
+
+// Card variants
+.card-primary {
+    border-color: $color-primary;
+
+    .card-header {
+        color: $color-white;
+        background-color: $color-primary;
+        border-color: $color-primary;
+    }
+}
+
+.card-secondary {
+    border-color: $color-secondary;
+
+    .card-header {
+        color: $color-white;
+        background-color: $color-secondary;
+        border-color: $color-secondary;
+    }
+}
+
+.card-success {
+    border-color: $color-success;
+
+    .card-header {
+        color: $color-white;
+        background-color: $color-success;
+        border-color: $color-success;
+    }
+}
+
+.card-danger {
+    border-color: $color-error;
+
+    .card-header {
+        color: $color-white;
+        background-color: $color-error;
+        border-color: $color-error;
+    }
+}
+
+.card-warning {
+    border-color: $color-warning;
+
+    .card-header {
+        color: $color-gray-900;
+        background-color: $color-warning;
+        border-color: $color-warning;
+    }
+}
+
+.card-info {
+    border-color: $color-info;
+
+    .card-header {
+        color: $color-white;
+        background-color: $color-info;
+        border-color: $color-info;
+    }
+}
+
+// Card with hover effect
+.card-hover {
+    cursor: pointer;
+    transition: transform $transition-fast, box-shadow $transition-fast;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: $shadow-lg;
+    }
+}
+
+// Card with glass effect
+.card-glass {
+    background: rgba($color-white, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba($color-white, 0.2);
+    box-shadow: 0 8px 32px 0 rgba($color-gray-300, 0.37);
+}
+
+// Card with gradient background
+.card-gradient {
+    background: linear-gradient(135deg, $color-primary 0%, $color-secondary 100%);
+    color: $color-white;
+    border: none;
+
+    .card-header,
+    .card-footer {
+        background-color: rgba($color-white, 0.1);
+        border-color: rgba($color-white, 0.2);
+    }
+
+    .card-title,
+    .card-subtitle,
+    .card-text {
+        color: $color-white;
+    }
+}
+
+// Card with border accent
+.card-accent {
+    border-top: 4px solid $color-primary;
+
+    &.card-secondary {
+        border-top-color: $color-secondary;
+    }
+
+    &.card-success {
+        border-top-color: $color-success;
+    }
+
+    &.card-danger {
+        border-top-color: $color-error;
+    }
+
+    &.card-warning {
+        border-top-color: $color-warning;
+    }
+
+    &.card-info {
+        border-top-color: $color-info;
+    }
+}

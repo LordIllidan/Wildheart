@@ -1,0 +1,335 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+// Glassmorphism styles for Angular Material components
+// These styles apply glassmorphism to Material components while preserving m2- classes
+
+// Card
+.mat-mdc-card {
+    &.glass {
+        @include glass;
+        border-radius: $border-radius-lg;
+        overflow: hidden;
+    }
+}
+
+// Dialog
+.mat-mdc-dialog-container {
+    &.glass {
+        @include glass;
+        border-radius: $border-radius-lg;
+        overflow: hidden;
+    }
+}
+
+// Menu
+.mat-mdc-menu-panel {
+    &.glass {
+        @include glass;
+        border-radius: $border-radius-md;
+        overflow: hidden;
+    }
+}
+
+// Snackbar
+.mat-mdc-snack-bar-container {
+    &.glass {
+        @include glass;
+        border-radius: $border-radius-md;
+        overflow: hidden;
+    }
+}
+
+// Tooltip
+.mat-mdc-tooltip {
+    &.glass {
+        @include glass;
+        border-radius: $border-radius-sm;
+        overflow: hidden;
+    }
+}
+
+// Bottom sheet
+.mat-mdc-bottom-sheet-container {
+    &.glass {
+        @include glass;
+        border-radius: $border-radius-lg $border-radius-lg 0 0;
+        overflow: hidden;
+    }
+}
+
+// Form fields
+.mat-mdc-form-field {
+    &.glass {
+        .mat-mdc-form-field-flex {
+            @include glass;
+            border-radius: $border-radius-md;
+            overflow: hidden;
+        }
+    }
+}
+
+// Buttons
+.mat-mdc-button,
+.mat-mdc-raised-button,
+.mat-mdc-outlined-button,
+.mat-mdc-unelevated-button {
+    &.glass {
+        @include glass;
+        border-radius: $border-radius-md;
+        overflow: hidden;
+    }
+}
+
+// Tabs
+.mat-mdc-tab-group {
+    &.glass {
+        .mat-mdc-tab-header {
+            @include glass;
+            border-radius: $border-radius-md;
+            overflow: hidden;
+        }
+    }
+}
+
+// Table
+.mat-mdc-table {
+    &.glass {
+        @include glass;
+        border-radius: $border-radius-md;
+        overflow: hidden;
+    }
+}
+
+// List
+.mat-mdc-list {
+    &.glass {
+        @include glass;
+        border-radius: $border-radius-md;
+        overflow: hidden;
+    }
+}
+
+// Expansion panel
+.mat-mdc-expansion-panel {
+    &.glass {
+        @include glass;
+        border-radius: $border-radius-md;
+        overflow: hidden;
+    }
+}
+
+// Stepper
+.mat-mdc-stepper {
+    &.glass {
+        @include glass;
+        border-radius: $border-radius-md;
+        overflow: hidden;
+    }
+}
+
+// Paginator
+.mat-mdc-paginator {
+    &.glass {
+        @include glass;
+        border-radius: $border-radius-md;
+        overflow: hidden;
+    }
+}
+
+// Progress bar
+.mat-mdc-progress-bar {
+    &.glass {
+        @include glass;
+        border-radius: $border-radius-full;
+        overflow: hidden;
+    }
+}
+
+// Progress spinner
+.mat-mdc-progress-spinner {
+    &.glass {
+        @include glass;
+        border-radius: $border-radius-full;
+        overflow: hidden;
+    }
+}
+
+// Checkbox
+.mat-mdc-checkbox {
+    &.glass {
+        .mdc-checkbox {
+            @include glass;
+            border-radius: $border-radius-sm;
+            overflow: hidden;
+        }
+    }
+}
+
+// Radio button
+.mat-mdc-radio-button {
+    &.glass {
+        .mdc-radio {
+            @include glass;
+            border-radius: $border-radius-full;
+            overflow: hidden;
+        }
+    }
+}
+
+// Slide toggle
+.mat-mdc-slide-toggle {
+    &.glass {
+        .mdc-switch {
+            @include glass;
+            border-radius: $border-radius-full;
+            overflow: hidden;
+        }
+    }
+}
+
+// Slider
+.mat-mdc-slider {
+    &.glass {
+        .mdc-slider__track {
+            @include glass;
+            border-radius: $border-radius-full;
+            overflow: hidden;
+        }
+    }
+}
+
+// Datepicker
+.mat-mdc-datepicker-content {
+    &.glass {
+        @include glass;
+        border-radius: $border-radius-md;
+        overflow: hidden;
+    }
+}
+
+// Autocomplete
+.mat-mdc-autocomplete-panel {
+    &.glass {
+        @include glass;
+        border-radius: $border-radius-md;
+        overflow: hidden;
+    }
+}
+
+// Select
+.mat-mdc-select-panel {
+    &.glass {
+        @include glass;
+        border-radius: $border-radius-md;
+        overflow: hidden;
+    }
+}
+
+// Chips
+.mat-mdc-chip {
+    &.glass {
+        @include glass;
+        border-radius: $border-radius-full;
+        overflow: hidden;
+    }
+}
+
+// Tree
+.mat-mdc-tree {
+    &.glass {
+        @include glass;
+        border-radius: $border-radius-md;
+        overflow: hidden;
+    }
+}
+
+// Sidenav
+.mat-mdc-sidenav {
+    &.glass {
+        @include glass;
+        border-radius: $border-radius-md;
+        overflow: hidden;
+    }
+}
+
+// Toolbar
+.mat-mdc-toolbar {
+    &.glass {
+        @include glass;
+        border-radius: $border-radius-md;
+        overflow: hidden;
+    }
+}
+
+// Grid list
+.mat-mdc-grid-list {
+    &.glass {
+        @include glass;
+        border-radius: $border-radius-md;
+        overflow: hidden;
+    }
+}
+
+// Card actions
+.mat-mdc-card-actions {
+    &.glass {
+        @include glass;
+        border-radius: $border-radius-md;
+        overflow: hidden;
+    }
+}
+
+// Card content
+.mat-mdc-card-content {
+    &.glass {
+        @include glass;
+        border-radius: $border-radius-md;
+        overflow: hidden;
+    }
+}
+
+// Card header
+.mat-mdc-card-header {
+    &.glass {
+        @include glass;
+        border-radius: $border-radius-md;
+        overflow: hidden;
+    }
+}
+
+// Card footer
+.mat-mdc-card-footer {
+    &.glass {
+        @include glass;
+        border-radius: $border-radius-md;
+        overflow: hidden;
+    }
+}
+
+// Card image
+.mat-mdc-card-image {
+    &.glass {
+        @include glass;
+        border-radius: $border-radius-md;
+        overflow: hidden;
+    }
+}
+
+// Card subtitle
+.mat-mdc-card-subtitle {
+    &.glass {
+        @include glass;
+        border-radius: $border-radius-md;
+        overflow: hidden;
+    }
+}
+
+// Card title
+.mat-mdc-card-title {
+    &.glass {
+        @include glass;
+        border-radius: $border-radius-md;
+        overflow: hidden;
+    }
+}

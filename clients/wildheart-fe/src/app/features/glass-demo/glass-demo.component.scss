@@ -1,0 +1,103 @@
+@import '../../../styles/abstracts/variables';
+@import '../../../styles/abstracts/mixins';
+
+.glass-demo-container {
+    padding: $spacing-xl;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    h1 {
+        text-align: center;
+        margin-bottom: $spacing-2xl;
+        color: $color-gray-800;
+    }
+
+    h2 {
+        margin-bottom: $spacing-lg;
+        color: $color-gray-700;
+    }
+
+    h3 {
+        margin-bottom: $spacing-md;
+        color: $color-gray-700;
+    }
+}
+
+.demo-section {
+    margin-bottom: $spacing-2xl;
+}
+
+.demo-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-lg;
+
+    >* {
+        flex: 1;
+        min-width: 300px;
+    }
+}
+
+// Utility classes
+.w-100 {
+    width: 100%;
+}
+
+.p-4 {
+    padding: $spacing-xl;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+// Form element containers
+.checkbox-container,
+.radio-container,
+.toggle-container,
+.slider-container,
+.button-container {
+    margin: $spacing-md 0;
+}
+
+// Glass effect classes
+.glass {
+    @include glass;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
+
+.glass-dark {
+    @include glass-dark;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
+
+// Background for demo
+:host {
+    display: block;
+    min-height: 100vh;
+    background: linear-gradient(135deg, $color-primary-light, $color-accent-light);
+    padding: $spacing-xl 0;
+}
+
+// Responsive adjustments
+@include respond-to(sm) {
+    .glass-demo-container {
+        padding: $spacing-lg;
+    }
+
+    .demo-row {
+        flex-direction: column;
+
+        >* {
+            width: 100%;
+        }
+    }
+}

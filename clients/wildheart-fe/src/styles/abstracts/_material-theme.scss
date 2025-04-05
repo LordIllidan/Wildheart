@@ -1,0 +1,137 @@
+@use '@angular/material' as mat;
+@import 'variables';
+
+// Define the palettes for our theme based on our styleguide
+$wildheart-primary: mat.m2-define-palette((50: lighten($color-primary, 45%),
+            100: lighten($color-primary, 40%),
+            200: lighten($color-primary, 30%),
+            300: lighten($color-primary, 20%),
+            400: lighten($color-primary, 10%),
+            500: $color-primary,
+            600: darken($color-primary, 10%),
+            700: darken($color-primary, 20%),
+            800: darken($color-primary, 30%),
+            900: darken($color-primary, 40%),
+            contrast: (50: rgba(black, 0.87),
+                100: rgba(black, 0.87),
+                200: rgba(black, 0.87),
+                300: rgba(black, 0.87),
+                400: white,
+                500: white,
+                600: white,
+                700: white,
+                800: white,
+                900: white,
+            )));
+
+$wildheart-accent: mat.m2-define-palette((50: lighten($color-accent, 45%),
+            100: lighten($color-accent, 40%),
+            200: lighten($color-accent, 30%),
+            300: lighten($color-accent, 20%),
+            400: lighten($color-accent, 10%),
+            500: $color-accent,
+            600: darken($color-accent, 10%),
+            700: darken($color-accent, 20%),
+            800: darken($color-accent, 30%),
+            900: darken($color-accent, 40%),
+            contrast: (50: rgba(black, 0.87),
+                100: rgba(black, 0.87),
+                200: rgba(black, 0.87),
+                300: rgba(black, 0.87),
+                400: rgba(black, 0.87),
+                500: rgba(black, 0.87),
+                600: white,
+                700: white,
+                800: white,
+                900: white,
+            )));
+
+$wildheart-warn: mat.m2-define-palette((50: lighten($color-error, 45%),
+            100: lighten($color-error, 40%),
+            200: lighten($color-error, 30%),
+            300: lighten($color-error, 20%),
+            400: lighten($color-error, 10%),
+            500: $color-error,
+            600: darken($color-error, 10%),
+            700: darken($color-error, 20%),
+            800: darken($color-error, 30%),
+            900: darken($color-error, 40%),
+            contrast: (50: rgba(black, 0.87),
+                100: rgba(black, 0.87),
+                200: rgba(black, 0.87),
+                300: rgba(black, 0.87),
+                400: white,
+                500: white,
+                600: white,
+                700: white,
+                800: white,
+                900: white,
+            )));
+
+// Create the theme object
+$wildheart-theme: mat.m2-define-light-theme((color: (primary: $wildheart-primary,
+                accent: $wildheart-accent,
+                warn: $wildheart-warn,
+            ),
+            typography: mat.m2-define-typography-config($font-family: $font-family-base,
+                $headline-1: mat.m2-define-typography-level(96px, 96px, 300, $letter-spacing: -1.5px),
+                $headline-2: mat.m2-define-typography-level(60px, 60px, 300, $letter-spacing: -0.5px),
+                $headline-3: mat.m2-define-typography-level(48px, 48px, 400),
+                $headline-4: mat.m2-define-typography-level(34px, 40px, 400, $letter-spacing: 0.25px),
+                $headline-5: mat.m2-define-typography-level(24px, 32px, 400),
+                $headline-6: mat.m2-define-typography-level(20px, 32px, 500, $letter-spacing: 0.15px),
+                $subtitle-1: mat.m2-define-typography-level(16px, 28px, 400, $letter-spacing: 0.15px),
+                $subtitle-2: mat.m2-define-typography-level(14px, 22px, 500),
+                $body-1: mat.m2-define-typography-level(16px, 24px, 400, $letter-spacing: 0.5px),
+                $body-2: mat.m2-define-typography-level(14px, 20px, 400, $letter-spacing: 0.25px),
+                $caption: mat.m2-define-typography-level(12px, 20px, 400, $letter-spacing: 0.4px),
+                $button: mat.m2-define-typography-level(14px, 14px, 500, $letter-spacing: 1.25px),
+            ),
+            density: 0,
+        ));
+
+// Include theme styles for core and each component used in your app.
+@include mat.all-component-themes($wildheart-theme);
+
+// Define custom component styles
+.mat-mdc-card {
+    border-radius: $border-radius-md;
+    box-shadow: $shadow-md;
+}
+
+.mat-mdc-button {
+    border-radius: $border-radius-sm;
+}
+
+.mat-mdc-raised-button {
+    border-radius: $border-radius-sm;
+}
+
+.mat-mdc-outlined-button {
+    border-radius: $border-radius-sm;
+}
+
+.mat-mdc-form-field {
+    width: 100%;
+}
+
+.mat-mdc-dialog-container {
+    border-radius: $border-radius-lg;
+}
+
+.mat-mdc-snack-bar-container {
+    border-radius: $border-radius-md;
+}
+
+// Custom styles for dark theme
+[data-theme="dark"] {
+    $dark-theme: mat.m2-define-dark-theme((color: (primary: $wildheart-primary,
+                    accent: $wildheart-accent,
+                    warn: $wildheart-warn,
+                ),
+                typography: mat.m2-define-typography-config(),
+                density: 0,
+            ));
+
+    @include mat.all-component-themes($dark-theme);
+}

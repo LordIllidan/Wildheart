@@ -1,0 +1,27 @@
+<div class="container">
+    <mat-card class="glass">
+        <h1>Systems</h1>
+        <p class="mb-4">Manage and monitor your systems</p>
+
+        <div class="systems-grid">
+            <mat-card *ngFor="let system of systems" class="glass glass-hover">
+                <div class="system-header">
+                    <h2>{{ system.name }}</h2>
+                    <mat-chip [color]="getStatusColor(system.status)" selected>
+                        <mat-icon>{{ getStatusIcon(system.status) }}</mat-icon>
+                        {{ system.status }}
+                    </mat-chip>
+                </div>
+
+                <p class="last-updated">
+                    Last updated: {{ system.lastUpdated | date:'medium' }}
+                </p>
+
+                <button mat-raised-button [color]="getStatusColor(system.status)" class="view-details">
+                    <mat-icon>visibility</mat-icon>
+                    View Details
+                </button>
+            </mat-card>
+        </div>
+    </mat-card>
+</div>

@@ -1,0 +1,248 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+// Base typography
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $color-gray-800;
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-family-heading;
+    font-weight: 600;
+    line-height: $line-height-heading;
+    color: $color-gray-900;
+    margin-bottom: $spacing-md;
+}
+
+h1 {
+    @include heading-1;
+    margin-bottom: $spacing-lg;
+}
+
+h2 {
+    @include heading-2;
+    margin-bottom: $spacing-md;
+}
+
+h3 {
+    @include heading-3;
+    margin-bottom: $spacing-md;
+}
+
+h4 {
+    @include heading-4;
+    margin-bottom: $spacing-sm;
+}
+
+h5 {
+    @include heading-5;
+    margin-bottom: $spacing-sm;
+}
+
+h6 {
+    @include heading-6;
+    margin-bottom: $spacing-sm;
+}
+
+// Paragraphs
+p {
+    margin-bottom: $spacing-md;
+    line-height: $line-height-base;
+}
+
+// Links
+a {
+    color: $color-primary;
+    text-decoration: none;
+    transition: color $transition-fast;
+
+    &:hover {
+        color: $color-primary-dark;
+        text-decoration: underline;
+    }
+
+    &:focus {
+        outline: 2px solid rgba($color-primary, 0.3);
+        outline-offset: 2px;
+    }
+}
+
+// Lists
+ul,
+ol {
+    margin-bottom: $spacing-md;
+    padding-left: $spacing-xl;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+li {
+    margin-bottom: $spacing-xs;
+}
+
+// Blockquotes
+blockquote {
+    border-left: 4px solid $color-primary;
+    padding-left: $spacing-md;
+    margin-left: 0;
+    margin-bottom: $spacing-md;
+    font-style: italic;
+    color: $color-gray-600;
+}
+
+// Code
+code {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: $color-gray-100;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: $border-radius-sm;
+    font-size: 0.9em;
+}
+
+pre {
+    background-color: $color-gray-100;
+    padding: $spacing-md;
+    border-radius: $border-radius-md;
+    overflow-x: auto;
+    margin-bottom: $spacing-md;
+
+    code {
+        background-color: transparent;
+        padding: 0;
+    }
+}
+
+// Small text
+small {
+    font-size: 0.875em;
+}
+
+// Text utilities
+.text-primary {
+    color: $color-primary;
+}
+
+.text-accent {
+    color: $color-accent;
+}
+
+.text-success {
+    color: $color-success;
+}
+
+.text-warning {
+    color: $color-warning;
+}
+
+.text-error {
+    color: $color-error;
+}
+
+.text-info {
+    color: $color-info;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.text-medium {
+    font-weight: 500;
+}
+
+.text-light {
+    font-weight: 300;
+}
+
+.text-italic {
+    font-style: italic;
+}
+
+.text-truncate {
+    @include truncate;
+}
+
+.text-nowrap {
+    white-space: nowrap;
+}
+
+.text-break {
+    word-break: break-word;
+}
+
+.text-muted {
+    color: $color-gray-500;
+}
+
+.text-small {
+    font-size: $font-size-sm;
+}
+
+.text-large {
+    font-size: $font-size-lg;
+}
+
+.text-xl {
+    font-size: $font-size-xl;
+}
+
+.text-2xl {
+    font-size: $font-size-2xl;
+}
+
+.text-3xl {
+    font-size: $font-size-3xl;
+}
+
+.text-4xl {
+    font-size: $font-size-4xl;
+}
+
+.text-5xl {
+    font-size: $font-size-5xl;
+}
